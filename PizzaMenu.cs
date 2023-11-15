@@ -32,7 +32,7 @@ namespace RONEAT
         {
             Console.WriteLine("");
             Console.WriteLine("Pizza Menu:");
-            Console.WriteLine("============");
+            Console.WriteLine("============\n");
 
             for (int i = 0; i < menuItems.Count; i++)
             {

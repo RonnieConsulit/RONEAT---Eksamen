@@ -24,6 +24,18 @@ namespace RONEAT
             Description = description;
             Price = price;
         }
+
+        public class Tilbehør
+        {
+            public string Name { get; set; }
+            public decimal Price { get; set; }
+
+            public Tilbehør(string name, decimal price)
+            {
+                Name = name;
+                Price = price;
+            }
+        }
     }
 
 }

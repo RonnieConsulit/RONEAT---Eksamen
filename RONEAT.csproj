@@ -44,10 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bestilling.cs" />
+    <Compile Include="Kvittering.cs" />
     <Compile Include="Pizza.cs" />
+    <Compile Include="PizzaTilbehør.cs" />
     <Compile Include="PizzaMenu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="smtp.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

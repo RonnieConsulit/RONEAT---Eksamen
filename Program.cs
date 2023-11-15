@@ -18,11 +18,13 @@ namespace RONEAT
             while (running)
             {
                 Console.WriteLine("Velkommen til RONEAT");
-                Console.WriteLine("____________________\n");
+                Console.WriteLine("\nMenu:");
+                Console.WriteLine("============\n");
                 Console.WriteLine("1. Menu");
                 Console.WriteLine("2. Indkøbsliste");
+                Console.WriteLine("3. Seneste bestillinger");
                 Console.WriteLine("0. Exit\n");
-                Console.Write("Foretag dit valg: (indtast tallet og tryk Enter): ");
+                Console.Write("Foretag dit valg: (indtast tallet og tryk Enter): \n");
 
                 if (int.TryParse(Console.ReadLine(), out valg))
                 {
@@ -51,11 +53,23 @@ namespace RONEAT
                             Console.WriteLine("Indkøbsliste:");
                             Console.WriteLine("============");
                             bestillingObj.DisplayBestilling();
-                            Console.WriteLine("Ønsker du at slette noget fra din bestilling? (Ja/Nej): \n");
+                            Console.WriteLine("\nDu har følgende valgmuligheder:");
+                            Console.WriteLine("1. Slet tilføjet Pizza");
+                            Console.WriteLine("2. Bekræft bestilling");
+                            Console.WriteLine("3. Gå tilbage til menu");
                             string svarSletning = Console.ReadLine();
                             bestillingObj.SletFraBestilling(svarSletning, bestillingObj.valgtePizzaer);
                             break;
 
+                        case 3:
+                            Console.Clear();
+                            Console.WriteLine("Du har valgt seneste bestilling.\n");
+                            // Print the shopping list
+                            Console.WriteLine("Seneste bestilling:");
+                            Console.WriteLine("============\n");
+
+                            bestillingObj.DisplaySeneste();
+                            break;
 
                         default:
                             Console.WriteLine("Ugyldigt valg. Prøv igen.");
