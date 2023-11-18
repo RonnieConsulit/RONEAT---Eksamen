@@ -102,7 +102,7 @@ namespace RONEAT
 
                         if (onsketSletning >= 1 && onsketSletning <= valgtePizzaer.Count)
                         {
-                            // Remove the selected pizza from the list
+                            // Slet pizzaer fra liste
                             valgtePizzaer.RemoveAt(onsketSletning - 1);
                             Console.WriteLine("\nPizzaen er blevet slettet fra din bestilling.\n");
                         }
@@ -134,8 +134,13 @@ namespace RONEAT
                         kvittering.ValgtePizzaer = valgtePizzaer;
                         kvittering.GenererKvittering(bestillingObj);
 
+                        foreach (var valgtePizza in valgtePizzaer)
+                        {
+                            SenesteBestilling(valgtePizza);
+                        }
                         // Nulstil bestilling efter kvittering
                         valgtePizzaer.Clear();
+
                         gyldigtSvar = true;
                     }
                     else if (valgtePizzaer.Count <= 0)
